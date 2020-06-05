@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Materials</title>
+    <link href="/assets/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="row">
+    <div class="col-1-2">
+        <form style="text-align: center;margin: 0px 300px;" action="/add" method="POST">
+            <fieldset>
+                <legend>Add Publication</legend>
+                <input type="text" name="title" placeholder="Title" required><br><br>
+                <textarea name="description" rows="10" cols="20" placeholder="Description" required></textarea><br><br>
+                <input type="text" name="ref" placeholder="Reference" required><br><br>
+                <input type="submit" value="Отправить">
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-1-2">
+      <!-- style="margin: 0 auto;"   -->
+      <table>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Reference</th>
+                <th>DateCreated</th>
+            </tr>
+            {{ range . }}
+                <tr>
+                    <td>{{.Title}}</td>
+                    <td>{{.Description}}</td>
+                    <td>{{.Ref}}</td>
+                    <td>{{.DateCreated}}</td>
+                </tr>
+            {{ end }}
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

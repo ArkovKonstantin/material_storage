@@ -1,0 +1,12 @@
+h1 {
+    color: red;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+.col-1-2 {
+    width: 50%;
+    float: left;
+}

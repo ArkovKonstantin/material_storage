@@ -1,0 +1,14 @@
+[SQLDataBase]
+  Server = "localhost"
+  Database = "material"
+  ApplicationName = "service"
+  MaxIdleConns = 2
+  MaxOpenConns = 2
+  ConnMaxLifetime = "5m"
+  User = "postgres"
+  Password = "12345"
+
+[ServerOpt]
+  ReadTimeout = "5s"
+  WriteTimeout = "5s"
+  IdleTimeout = "5s"
