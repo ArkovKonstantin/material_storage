@@ -1,5 +1,5 @@
 [SQLDataBase]
-  Server = "localhost"
+  Server = "postgres"
   Database = "material"
   ApplicationName = "service"
   MaxIdleConns = 2

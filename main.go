@@ -34,8 +34,8 @@ func main() {
 }
 
 func NewApplication(conf models.Config) *application {
-	dataSourceName := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		conf.SQLDataBase.Server, "5433", conf.SQLDataBase.User, conf.SQLDataBase.Password, conf.SQLDataBase.Database)
+	dataSourceName := fmt.Sprintf("postgres://%s:%s@%s/%s?sslmode=disable",
+		conf.SQLDataBase.User, conf.SQLDataBase.Password, conf.SQLDataBase.Server, conf.SQLDataBase.Database)
 
 	db, err := sql.Open("postgres", dataSourceName)
 	if err != nil {

@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+  postgres:
+    build: "./postgres"
+    restart: "always"
+    environment:
+      POSTGRES_DB: "material"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "12345"
+  web:
+    build: .
+    command: /opt/main
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - 8000:8000
